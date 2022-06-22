@@ -54,7 +54,8 @@
             <div class="form-floating">
               <textarea class="form-control" placeholder="Sinopsis de la película" id="sinopsis" style="height: 100px"></textarea>
               <label for="sinopsis">Sinopsis</label>
-            </div>
+            </div><br>
+            <button class="btn btn-primary">Guardar</button>
           </form>
         </div>
       </div>
