@@ -39,6 +39,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/inicio', 'Home::inicio');
 //ruta para login
 $routes->post('/login', 'Home::login');
+//ruta para el logout
+$routes->get('/salir', 'Home::salir');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

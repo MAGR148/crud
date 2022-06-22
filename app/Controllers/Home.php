@@ -41,4 +41,13 @@ class Home extends BaseController
         }
 
     }
+
+    //Método para el logout
+    public function salir()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()->to(base_url('/'));
+
+    }
 }
