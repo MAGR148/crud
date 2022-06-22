@@ -29,6 +29,7 @@ class Home extends BaseController
             password_verify($password, $datosUsuario[0]['password'])){
                 
                 $data = [
+                    "idUsuario" => $datosUsuario[0]['id_usuario'],
                     "usuario" => $datosUsuario[0]['usuario'],
                     "type" => $datosUsuario[0]['type']
                 ];
@@ -50,4 +51,13 @@ class Home extends BaseController
         return redirect()->to(base_url('/'));
 
     }
+
+    //----------------------------------------Métedos para el CRUD de peliculas----------------------------------------------------------
+
+    //Método para crear pelicula
+
+
+    //Método para actualizar pelicula
+
+
 }
