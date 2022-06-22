@@ -17,7 +17,7 @@
                     <input type="text" name="usuario" class="form-control" required>
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" class="form-control" required>
-                    <a href="#" class="float-left stretched-link">Registrarme</a
+                    <a href="#" class="link">Registrarme</a>
                     <br><br>
                     <button class="btn btn-primary">Entrar</button>
                 </form>
