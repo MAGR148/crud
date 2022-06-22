@@ -38,6 +38,8 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/inicio', 'Home::inicio');
 
+//ruta para login
+$routes->post('/login', 'Home::login');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

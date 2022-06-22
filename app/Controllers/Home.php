@@ -13,4 +13,11 @@ class Home extends BaseController
     {
         return view('inicio');
     }
+
+    //Método para hacer login
+    public function login()
+    {
+        $usuario = $this->request->getPost('usuario');
+        $password = $this->request->getPost('password');
+    }
 }
