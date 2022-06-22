@@ -11,13 +11,14 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <h1>Login con codeigniter</h1>
+                <h1>Peli Plus</h1>
                 <form action="<?php echo base_url('/login') ?>" method="POST">
                     <label for="usuario">Usuario</label>
                     <input type="text" name="usuario" class="form-control" required>
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" class="form-control" required>
-                    <br>
+                    <a href="#" class="float-left stretched-link">Registrarme</a
+                    <br><br>
                     <button class="btn btn-primary">Entrar</button>
                 </form>
             </div>
