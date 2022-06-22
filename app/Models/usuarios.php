@@ -1,6 +1,6 @@
 <?php namespace App\Models;
 
-    use Codeigniter\Model;
+    use CodeIgniter\Model;
 
     class Usuarios extends Model {
         public function obtenerUsuario($data) {
