@@ -37,6 +37,10 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/inicio', 'Home::inicio');
+//ruta que muestra el formulario para registrar usuario
+$routes->get('/registro', 'Home::registro');
+//ruta que hace el registritar usuario
+$routes->post('/registrar', 'Home::registrarUsuario');
 //ruta para login
 $routes->post('/login', 'Home::login');
 //ruta para el logout
