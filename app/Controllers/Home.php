@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 
+use App\Database\Seeds\Usuario;
 use App\Models\Usuarios;
 use App\Models\Peliculas;
 
@@ -9,6 +10,51 @@ class Home extends BaseController
     {
         $mensaje = session('mensaje');
         return view('login', ["mensaje" => $mensaje]);
+    }
+
+    //ver vista para registrar 
+    public function registro()
+    {
+        $mensaje = session('mensaje');
+        return view('formRegistro', ["mensaje" => $mensaje]);
+    }
+
+    //Registar Usuario
+    public function registrarUsuario()
+    {   
+        $Usuario = new Usuarios();
+        $pass = $_POST['password'];
+        $pass1 = $_POST['password1'];
+        $c = $Usuario->contarUsuario($_POST['usuario']);
+
+        //Validación de contraseñas
+        if($pass == $pass1){
+            if($c == 0){
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $datos = [
+                    "nombre" => $_POST['nombre'],
+                    "a_paterno" => $_POST['a_paterno'],
+                    "a_materno" => $_POST['a_materno'],
+                    "usuario" => $_POST['usuario'],
+                    "password" => $password,
+                    "type" => $_POST['type']
+                ];
+
+                
+                $respuesta = $Usuario->insertar($datos);
+
+                if($respuesta > 0){
+                    return redirect()->to(base_url().'/')->with('mensaje', '1');
+                }else{
+                    return redirect()->to(base_url().'/')->with('mensaje', '0');
+                }
+            }else{
+                return redirect()->to(base_url().'/registro')->with('mensaje', '1');
+            }
+        }else{
+            return redirect()->to(base_url().'/registro')->with('mensaje', '0');
+        }
+        
     }
 
     //Ver el listado de peliculas
@@ -37,9 +83,8 @@ class Home extends BaseController
 
         $datosUsuario = $Usuario->obtenerUsuario(['usuario' => $usuario]);
 
-        if(count($datosUsuario) > 0 && 
-            password_verify($password, $datosUsuario[0]['password'])){
-                
+        if(count($datosUsuario) > 0){
+            if(password_verify($password, $datosUsuario[0]['password'])){
                 $data = [
                     "idUsuario" => $datosUsuario[0]['id_usuario'],
                     "usuario" => $datosUsuario[0]['usuario'],
@@ -49,10 +94,12 @@ class Home extends BaseController
                 ];
                 $session = session();
                 $session->set($data);
-                return redirect()->to(base_url('/inicio'));
-
+                return redirect()->to(base_url('/inicio'))->with('mensaje', '6');
+            }else{
+                return redirect()->to(base_url('/'))->with('mensaje', '3');
+            }
         }else{
-            return redirect()->to(base_url('/'))->with('mensaje', '0');
+            return redirect()->to(base_url('/'))->with('mensaje', '2');
         }
 
     }
