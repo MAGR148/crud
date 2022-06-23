@@ -8,7 +8,7 @@ class Usuario extends Seeder
 {
     public function run()
     {
-        $nombre = "Miguel Angel";
+        $nombre = "Angel";
         $a_paterno = "Gómez";
         $a_materno = "Rojas";
         $usuario = "admin";
