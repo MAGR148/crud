@@ -94,6 +94,7 @@
               <textarea class="form-control" placeholder="Sinopsis de la película" id="sinopsis" name="sinopsis" style="height: 100px"> <?php echo $sinopsis ?></textarea>
               <label for="sinopsis">Sinopsis</label>
             </div><br>
+            <a href="<?php echo base_url().'/inicio' ?>" class="btn btn-danger">Volver</a>
             <button class="btn btn-primary">Actualizar</button>
           </form>
         </div>
