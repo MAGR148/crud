@@ -111,6 +111,8 @@
         swal(':)', '¡Película eliminada correctamente!', 'success');
       }else if(mensaje == '5'){
         swal(':c', '¡Fallo al eliminar!', 'error');
+      }else if(mensaje == '6'){
+        swal(':D', '¡Bienvenido!', 'success');
       }
       
     </script>
