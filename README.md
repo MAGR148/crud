@@ -66,12 +66,12 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 
 Use these steps to create a local installation for development and testing.
 
-Clone the repo: git clone https://github.com/codeigniter4projects/website
-Work in the repo directory: cd website
-Make sure the writable folder is accessible: chmod -R 777 writable
-Install dependencies: composer install
-Create your .env file: cp env .env
-Edit .env and set at least the following:
-CI_ENVIRONMENT = development
-database.default.database = ../writable/database.db
-database.default.DBDriver = SQLite3
+1. Clone the repo: git clone (https://github.com/MAGR148/sistema_peliculas.git)
+2. Work in the repo directory: cd sistema_peliculas
+3. Make sure the writable folder is accessible: chmod -R 777 writable
+4. Install dependencies: composer install
+5. Create your .env file: cp env .env
+6. Edit .env and set at least the following:
+-CI_ENVIRONMENT = development
+-database.default.database = ../writable/database.db
+-database.default.DBDriver = SQLite3
