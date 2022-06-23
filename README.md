@@ -90,3 +90,6 @@ To see how it works you can check the following videos I uploaded to Youtube
 
 ## CRUD example
 (https://youtu.be/06liQ4i9bsI)
+
+## DataBase
+If no migrations are created leave the file named sistema_peliculas.sql to import the database to a new one.
