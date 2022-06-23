@@ -61,3 +61,17 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 - xml (enabled by default - don't turn it off)
+
+## Installation
+
+Use these steps to create a local installation for development and testing.
+
+Clone the repo: git clone https://github.com/codeigniter4projects/website
+Work in the repo directory: cd website
+Make sure the writable folder is accessible: chmod -R 777 writable
+Install dependencies: composer install
+Create your .env file: cp env .env
+Edit .env and set at least the following:
+CI_ENVIRONMENT = development
+database.default.database = ../writable/database.db
+database.default.DBDriver = SQLite3
