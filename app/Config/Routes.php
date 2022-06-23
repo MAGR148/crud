@@ -41,6 +41,14 @@ $routes->get('/inicio', 'Home::inicio');
 $routes->post('/login', 'Home::login');
 //ruta para el logout
 $routes->get('/salir', 'Home::salir');
+//ruta para crear pelicula
+$routes->post('/crear', 'Home::crearPelicula');
+//ruta para actualizar pelicula
+$routes->post('/actualizar', 'Home::actualizarPelicula');
+//ruta para traer datos para actualizar
+$routes->get('/obtenerPeli/(:any)', 'Home::mostrarPelicula/$1');
+//ruta para elimianr pelicula
+$routes->get('/eliminarPeli/(:any)', 'Home::eliminarPelicula/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
