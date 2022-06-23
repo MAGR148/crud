@@ -82,3 +82,11 @@ To make local development simpler, a migration and seed have been provided to se
 2. Run the seeder: php spark db:seed usuario
 
 At this point you should have a usable version of the current code! Try launching it locally:
+
+To see how it works you can check the following videos I uploaded to Youtube
+
+## Login example
+(https://youtu.be/FDL2PASWnzE)
+
+## CRUD example
+(https://youtu.be/06liQ4i9bsI)
