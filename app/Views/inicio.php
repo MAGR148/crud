@@ -10,7 +10,7 @@
 
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><?php echo session('usuario'); ?></a>
+        <a class="navbar-brand" href="<?php echo base_url().'/inicio'?>"><?php echo session('nombre'); ?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,7 +53,7 @@
               <label for="clasificacion">Clasificación</label>
             </div><br>
             <div class="form-floating">
-              <textarea class="form-control" placeholder="Sinopsis de la película" id="sinopsis" style="height: 100px"></textarea>
+              <textarea class="form-control" placeholder="Sinopsis de la película" name="sinopsis" id="sinopsis" style="height: 100px"></textarea>
               <label for="sinopsis">Sinopsis</label>
             </div><br>
             <button class="btn btn-primary">Guardar</button>
@@ -72,8 +72,23 @@
                 <th>Idioma</th>
                 <th>Clasificación</th>
                 <th>Sinopsis</th>
+                <th colspan="2">Acciones</th>
               </tr>
-
+              <?php foreach($datos as $key): ?>
+                <tr>
+                  <td><?php echo $key->titulo  ?></td>
+                  <td><?php echo $key->anio  ?></td>
+                  <td><?php echo $key->idioma  ?></td>
+                  <td><?php echo $key->clasificacion  ?></td>
+                  <td><?php echo $key->sinopsis  ?></td>
+                  <td>
+                    <a href="<?php echo base_url().'/obtenerPeli/'.$key->id_pelicula ?>" class="btn btn-warning">Actualizar</a>
+                  </td>
+                  <td>
+                    <a href="<?php echo base_url().'/eliminarPeli/'.$key->id_pelicula?>" class="btn btn-danger">Eliminar</a>
+                  </td>
+                </tr>
+              <?php  endforeach;?>
             </table>
           </div>
         </div>
@@ -81,5 +96,23 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+      let mensaje = '<?php echo $mensaje ?>';
+      if(mensaje == '1'){
+        swal(':D', '¡Película insertada con éxito!', 'success');
+      }else if(mensaje == '0'){
+        swal(':(', '¡Película no insertada!', 'error');
+      }else if(mensaje == '2'){
+        swal(':)', '¡Película actualizada correctamente!', 'success');
+      }else if(mensaje == '3'){
+        swal(':c', '¡Fallo al actualizar!', 'error');
+      }else if(mensaje == '4'){
+        swal(':)', '¡Película eliminada correctamente!', 'success');
+      }else if(mensaje == '5'){
+        swal(':c', '¡Fallo al eliminar!', 'error');
+      }
+      
+    </script>
   </body>
 </html>
